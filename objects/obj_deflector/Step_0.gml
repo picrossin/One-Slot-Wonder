@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+var item = instance_place(x, y, obj_throwable);
 if (place_meeting(x, y, obj_player)) {
 	if (obj_player.current_item != item_type.none) {
 		if (horizontal) {
@@ -10,18 +11,16 @@ if (place_meeting(x, y, obj_player)) {
 			else player_throw(true, 90);
 		}
 	}
-} else if (place_meeting(x, y, obj_throwable)) {
-	var item = instance_place(x, y, obj_throwable);
-	if (item != noone) {
-		item.thrown = true;
-		item.deflected = true;
+} else if (item != noone && !item.thrown) {
+	item.thrown = true;
+	item.deflected = true;
 		
-		if (horizontal) {
-			if (item.x > x) item.angle = 0;
-			else item.angle = 180;	
-		} else {
-			if (item.y > y) item.angle = 270;	
-			else item.angle = 90;	
-		}
+	if (horizontal) {
+		if (item.x > x) item.angle = 0;
+		else item.angle = 180;	
+	} else {
+		if (item.y > y) item.angle = 270;	
+		else item.angle = 90;	
+		
 	}
 }

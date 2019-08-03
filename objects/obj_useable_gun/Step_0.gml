@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 if (instance_exists(obj_player)) {
-		if (obj_player.current_item = item_type.gun) {
+	if (obj_player.current_item = item_type.gun) {
 		var angle = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y);
 
 		image_angle = angle;

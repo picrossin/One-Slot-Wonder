@@ -20,4 +20,4 @@ vspd = 0;
 run_speed = 3; 
 jump_speed = -5;
 
-holding = mouse_check_button_pressed(mb_right);
+throw = mouse_check_button_pressed(mb_right);

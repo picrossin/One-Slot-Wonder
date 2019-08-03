@@ -3,4 +3,6 @@ hspd = 0;
 vspd = 0;
 
 type = item_type.none;
-held = false;
+
+thrown = false;
+can_pickup = true;

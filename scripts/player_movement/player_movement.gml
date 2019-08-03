@@ -3,7 +3,7 @@ with (obj_player) {
 	key_right = keyboard_check(ord("D"));
 	key_left = keyboard_check(ord("A"));
 	key_jump = keyboard_check(vk_space) || keyboard_check(ord("W"));
-	holding = mouse_check_button(mb_right);
+	throw = mouse_check_button_pressed(mb_right);
 
 	if (mouse_x > x) current_dir = dir.right;
 	else current_dir = dir.left;
@@ -31,15 +31,16 @@ with (obj_player) {
 	if (place_meeting(x, y + 1, obj_wall) && key_jump) vspd = jump_speed; 
 	vspd += grav;
 
+	
 	var moving_down = sign(vspd);
 	if (place_meeting(x, y + vspd, obj_wall)) {
 	    while (!place_meeting(x, y + moving_down, obj_wall)) y += moving_down;
 	    vspd = 0;
 	}
 
-	y += vspd;
+	y += floor(vspd);
 	
-	if (holding) {
+	if (throw) {
 		var item = obj_throwable;
 		var nothing = false;
 		switch (current_item) {
@@ -61,8 +62,9 @@ with (obj_player) {
 		}	
 		if (!nothing) {
 			current_item = item_type.none;
-			holding_item = instance_create_depth(x + 16, y, depth, item);
-			holding_item.held = true;
+			
+			var thrown_item = instance_create_depth(x, y, depth, item);
+			thrown_item.thrown = true;
 		}
 	}
 }

@@ -24,4 +24,4 @@ if (place_meeting(x, y + vspd, obj_wall)) {
 	vspd = 0;
 }
 
-y += vspd;
+y += floor(vspd);

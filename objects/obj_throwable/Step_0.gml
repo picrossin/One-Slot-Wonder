@@ -9,6 +9,7 @@ if (instance_exists(obj_player) && thrown) {
 	
 	phy_speed_x = lengthdir_x(4, angle);
 	phy_speed_y = lengthdir_y(4, angle);
+}
 
 if (place_meeting(x, y, obj_player)) {
 	if (obj_player.current_item == item_type.none && can_pickup && !thrown) {

@@ -1,5 +1,8 @@
+/// @function load(save_name)
+/// @param {string} save_name The name of the file to load
+
 with (obj_player) {
-	ini_open("savedata.ini");
+	ini_open(argument0);
 	
 	// player stuff
 	x = ini_read_real("player", "x", 32);

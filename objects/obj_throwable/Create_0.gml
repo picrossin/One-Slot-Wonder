@@ -6,3 +6,6 @@ type = item_type.none;
 
 thrown = false;
 can_pickup = true;
+
+angle = 0;
+deflected = false;

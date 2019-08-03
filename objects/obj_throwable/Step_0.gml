@@ -1,5 +1,5 @@
 if (instance_exists(obj_player) && thrown) {
-	var angle = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y);
+	if (!deflected) angle = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y);
 	image_angle = angle;
 	
 	can_pickup = false;

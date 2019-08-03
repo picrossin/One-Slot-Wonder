@@ -16,3 +16,9 @@ switch (current_item) {
 	case item_type.none:
 		break;
 }
+
+if (place_meeting(x, y, obj_enemy)) 
+{
+	load("checkpoint.ini");
+	file_delete("undo.ini");
+}

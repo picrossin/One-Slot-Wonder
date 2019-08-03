@@ -3,7 +3,6 @@ if (held && instance_exists(obj_player)) {
 	var angle = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y);
 	
 	if (mouse_check_button_pressed(mb_left)) {
-		//obj_player.current_item = item_type.none;
 		held = false;
 		hspd = lengthdir_x(6, angle);
 		vspd = lengthdir_y(6, angle);

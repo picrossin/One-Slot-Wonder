@@ -1,8 +1,8 @@
 with (obj_player) {
 	//Get inputs (1 = pressed, 0 = not pressed)
-	key_right = keyboard_check(vk_right);
-	key_left = keyboard_check(vk_left);
-	key_jump = keyboard_check(vk_space);
+	key_right = keyboard_check(ord("D"));
+	key_left = keyboard_check(ord("A"));
+	key_jump = keyboard_check(vk_space) || keyboard_check(ord("W"));
 	holding = mouse_check_button(mb_right);
 
 	if (key_right) {
@@ -45,6 +45,12 @@ with (obj_player) {
 		        break;
 			case item_type.sword:
 				item = obj_sword;
+				break;
+			case item_type.hammer:
+				item = obj_hammer;
+				break;
+			case item_type.gun:
+				item = obj_gun;
 				break;
 			default:
 				nothing = true;

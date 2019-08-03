@@ -5,6 +5,9 @@ with (obj_player) {
 	key_jump = keyboard_check(vk_space) || keyboard_check(ord("W"));
 	holding = mouse_check_button(mb_right);
 
+	if (mouse_x > x) current_dir = dir.right;
+	else current_dir = dir.left;
+
 	if (key_right) {
 		hspd = run_speed;
 		current_dir = dir.right;

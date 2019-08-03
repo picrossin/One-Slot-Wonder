@@ -1,4 +1,8 @@
-if (place_meeting(x, y, obj_player_weapon)) instance_destroy();
+if (place_meeting(x, y, obj_player_weapon)) {
+	var bullet = instance_place(x, y, obj_bullet);
+	if (bullet != noone) instance_destroy(bullet);
+	instance_destroy();
+}
 
 if (current_dir == dir.right) hspd = spd;
 else hspd = -spd;

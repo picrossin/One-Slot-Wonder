@@ -1,3 +1,3 @@
 with (obj_player) {
-	jump_speed = -7;
+	jump_speed = -8;
 }

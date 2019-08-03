@@ -16,7 +16,6 @@ with (obj_player) {
 	
 	image_xscale = current_dir == dir.right ? 1 : -1;
 
-
 	if (!key_right && !key_left) hspd = 0;
 
 	var moving_right = sign(hspd);

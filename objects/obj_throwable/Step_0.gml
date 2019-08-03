@@ -1,10 +1,17 @@
 if (held && instance_exists(obj_player)) {
 	held = obj_player.holding;
-	
 	var angle = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y);
-	image_angle = angle;
-	x = obj_player.x + lengthdir_x(50, angle);
-	y = obj_player.y + lengthdir_y(50, angle);
+	
+	if (mouse_check_button_pressed(mb_left)) {
+		//obj_player.current_item = item_type.none;
+		held = false;
+		hspd = lengthdir_x(6, angle);
+		vspd = lengthdir_y(6, angle);
+	} else {
+		image_angle = angle;
+		x = obj_player.x + lengthdir_x(40, angle);
+		y = obj_player.y + lengthdir_y(40, angle);
+	}
 } else {
 	var moving_right = sign(hspd);
 	if (place_meeting(x + hspd, y, obj_wall)) {
@@ -19,6 +26,7 @@ if (held && instance_exists(obj_player)) {
 	if (place_meeting(x, y + vspd, obj_wall)) {
 	    while (!place_meeting(x, y + moving_down, obj_wall)) y += moving_down;
 	    vspd = 0;
+		hspd = 0;
 	}
 
 	y += vspd;

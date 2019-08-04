@@ -2,7 +2,8 @@ with (obj_player) {
 	//Get inputs (1 = pressed, 0 = not pressed)
 	key_right = keyboard_check(ord("D"));
 	key_left = keyboard_check(ord("A"));
-	key_jump = keyboard_check(vk_space) || keyboard_check(ord("W"));
+	key_jump = keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"));
+	jump_held = keyboard_check(vk_space) || keyboard_check(ord("W"));
 	throw = mouse_check_button_pressed(mb_right);
 
 	if (mouse_x > x) current_dir = dir.right;
@@ -33,6 +34,11 @@ with (obj_player) {
 	x += hspd;
 
 	if (place_meeting(x, y + 1, obj_wall) && key_jump) vspd = jump_speed; 
+	
+	if (vspd < 0 && !jump_held) {
+		vspd = max(vspd, -2);
+	}	
+	
 	vspd += grav;
 
 	

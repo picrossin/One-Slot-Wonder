@@ -7,8 +7,8 @@ if (instance_exists(obj_player) && thrown) {
 	thrown = false;
 	alarm[0] = 20;
 	
-	phy_speed_x = lengthdir_x(4, angle);
-	phy_speed_y = lengthdir_y(4, angle);
+	phy_speed_x = lengthdir_x(3.5, angle);
+	phy_speed_y = lengthdir_y(3.5, angle);
 }
 
 if (place_meeting(x, y, obj_player)) {

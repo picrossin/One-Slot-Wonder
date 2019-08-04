@@ -13,6 +13,7 @@ if (instance_exists(obj_player) && thrown) {
 
 if (place_meeting(x, y, obj_player)) {
 	if (obj_player.current_item == item_type.none && can_pickup && !thrown) {
+		audio_play_sound(snd_collect, 10, false);
 		obj_player.current_item = type;
 		instance_destroy();
 	}	

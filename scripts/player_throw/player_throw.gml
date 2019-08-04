@@ -22,6 +22,7 @@ with (obj_player) {
 	if (!nothing) {
 		current_item = item_type.none;
 			
+		audio_play_sound(snd_throw, 10, false);
 		var thrown_item = instance_create_depth(x, y, depth, item);
 		thrown_item.thrown = true;
 		if (argument0) {

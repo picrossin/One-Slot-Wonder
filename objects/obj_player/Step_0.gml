@@ -1,4 +1,6 @@
-player_movement();
+audio_listener_position(x, y, 0);
+
+if (!freeze) player_movement();
 set_defaults();
 switch (current_item) {
     case item_type.boots:

@@ -1,4 +1,8 @@
+if (instance_exists(obj_player)) audio_sound_gain(noise, 5 - (point_distance(x, y, obj_player.x, obj_player.y) / 10), 0);
+
 if (place_meeting(x, y, obj_sword_slash)) {
+	audio_stop_sound(noise);
+	audio_play_sound(snd_kill_enemy, 10, false);
 	screen_shake(3, 3);	
 	instance_destroy();
 }

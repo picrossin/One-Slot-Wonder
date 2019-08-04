@@ -33,7 +33,12 @@ with (obj_player) {
 	}
 	x += hspd;
 
-	if (place_meeting(x, y + 1, obj_wall) && key_jump) vspd = jump_speed; 
+	if (place_meeting(x, y + 1, obj_wall) && key_jump) {
+		jumped = true;
+		vspd = jump_speed; 
+		var sound = current_item == item_type.boots ? snd_big_jump : snd_jump;
+		audio_play_sound(sound, 10, false);
+	}
 	
 	if (vspd < 0 && !jump_held) {
 		vspd = max(vspd, -2);
@@ -44,6 +49,10 @@ with (obj_player) {
 	
 	var moving_down = sign(vspd);
 	if (place_meeting(x, y + vspd, obj_wall)) {
+		if (jumped) {
+			audio_play_sound(snd_land, 10, false);
+			jumped = false;
+		}
 	    while (!place_meeting(x, y + moving_down, obj_wall)) y += moving_down;
 	    vspd = 0;
 	}

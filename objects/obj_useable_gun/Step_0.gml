@@ -16,6 +16,7 @@ if (instance_exists(obj_player)) {
 		
 		if (shot) {
 			if (image_index >= 5) {
+				audio_play_sound(snd_shoot, 10, false);
 				var bullet = instance_create_depth(x, y + lengthdir_y(5, angle + 90), depth, obj_bullet);
 				bullet.image_angle = angle;	
 				sprite_index = spr_gun_dropped;

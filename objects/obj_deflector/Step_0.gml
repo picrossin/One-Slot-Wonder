@@ -2,6 +2,7 @@
 // You can write your code in this editor
 var item = instance_place(x, y, obj_throwable);
 if (place_meeting(x, y, obj_player)) {
+	if !audio_is_playing(snd_deflector) audio_play_sound(snd_deflector, 10, false);
 	if (obj_player.current_item != item_type.none) {
 		if (horizontal) {
 			if (obj_player.x > x) player_throw(true, 0);
@@ -12,6 +13,7 @@ if (place_meeting(x, y, obj_player)) {
 		}
 	}
 } else if (item != noone && !item.thrown) {
+	if !audio_is_playing(snd_deflector) audio_play_sound(snd_deflector, 10, false);
 	item.thrown = true;
 	item.deflected = true;
 		

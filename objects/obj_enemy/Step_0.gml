@@ -1,5 +1,7 @@
-if (place_meeting(x, y, obj_sword_slash)) instance_destroy();
-
+if (place_meeting(x, y, obj_sword_slash)) {
+	screen_shake(3, 3);	
+	instance_destroy();
+}
 var bullet = instance_place(x, y, obj_bullet);
 if (bullet != noone) instance_destroy(bullet);
 

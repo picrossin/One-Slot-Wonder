@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "016cb3f9-a10a-4b54-a319-e6ac1a4597a2",
+            "Value": {
+                "id": "be31cef9-32f7-4c14-8157-d72c411bf45f",
+                "resourcePath": "objects\\obj_water_controller\\obj_water_controller.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "017781b4-8a21-4069-aa7a-1d7a915f1272",
             "Value": {
                 "id": "7f861b15-4869-418e-98cf-7e1a4243b921",
@@ -260,6 +268,14 @@
                 "id": "27defafd-3ccc-4bd5-968d-53a8be5bc48c",
                 "resourcePath": "sprites\\spr_wall\\spr_wall.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "60fd6981-8651-432a-aa01-6e15ba039dbe",
+            "Value": {
+                "id": "263be614-6dd5-4cfb-bf41-57ee9cffe86d",
+                "resourcePath": "objects\\obj_water\\obj_water.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -603,6 +619,14 @@
             "Value": {
                 "id": "ac3af2af-a71d-4152-a717-ed746c032895",
                 "resourcePath": "sprites\\spr_grain\\spr_grain.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ec9bc606-6a15-474f-b21e-42923dd1a071",
+            "Value": {
+                "id": "a8b87518-9fac-4369-8e6b-229807d7248b",
+                "resourcePath": "sprites\\spr_water\\spr_water.yy",
                 "resourceType": "GMSprite"
             }
         },

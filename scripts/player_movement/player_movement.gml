@@ -17,9 +17,13 @@ with (obj_player) {
 		current_dir = dir.left;
 	}
 	
-	image_xscale = current_dir == dir.right ? 1 : -1;
-
-	if (!key_right && !key_left) hspd = 0;
+	if (!key_right && !key_left) 
+	{
+		sprite_index = current_dir == dir.right ? spr_player_idle_right : spr_player_idle_left;
+		hspd = 0;
+	} else {
+		sprite_index = current_dir == dir.right ? spr_run_right : spr_run_left;
+	}
 
 	var moving_right = sign(hspd);
 	if (place_meeting(x + hspd, y, obj_wall)) {

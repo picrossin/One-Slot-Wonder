@@ -6,14 +6,24 @@ if (instance_exists(obj_player)) {
 		var angle = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y);
 
 		image_angle = angle;
-		x = obj_player.x + lengthdir_x(20, angle);
-		y = obj_player.y + lengthdir_y(20, angle);
+		x = obj_player.x + lengthdir_x(10, angle);
+		y = obj_player.y + lengthdir_y(10, angle);
 		
 		if (mouse_check_button_pressed(mb_left)) {
-			var bullet = instance_create_depth(x, y + lengthdir_y(5, angle + 90), depth, obj_bullet);
-			bullet.image_angle = angle;	
+			sprite_index = spr_sling_shooting;
+			shot = true;
+		}
+		
+		if (shot) {
+			if (image_index >= 5) {
+				var bullet = instance_create_depth(x, y + lengthdir_y(5, angle + 90), depth, obj_bullet);
+				bullet.image_angle = angle;	
+				sprite_index = spr_gun_dropped;
+				shot = false;
+			}
 		}
 	} else {
 		instance_destroy();
-	}	
+	}
+	
 }

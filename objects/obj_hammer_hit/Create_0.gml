@@ -5,5 +5,3 @@ if (instance_exists(obj_player)) {
 	image_xscale = obj_player.image_xscale;
 	dist_from_player = x - obj_player.x;
 }
-
-alarm[0] = 15;

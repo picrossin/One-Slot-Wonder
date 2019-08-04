@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "11bacb76-53bf-441a-ac62-edca839a066c",
+            "Value": {
+                "id": "2475d733-a309-482f-8e33-d6b6b9d2c6ef",
+                "resourcePath": "sprites\\spr_sling_shooting\\spr_sling_shooting.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "14ecf791-78ce-4b06-8638-21632c50b4b1",
             "Value": {
                 "id": "19d7791d-80c8-45d3-8404-12f99f71233c",

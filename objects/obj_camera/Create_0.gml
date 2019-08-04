@@ -21,3 +21,5 @@ shake_magnitude = 0;
 shake_remain = 0;
 
 randomize();
+
+image_ind = 0;
